@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  
+  mongodb:
+    restart: always
+    image: mongo:latest
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - 27017:27017
+    command: mongod
+
+  express-js:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URI: mongodb://mongodb:27017/cspReports
+
+volumes:
+  mongo_data:

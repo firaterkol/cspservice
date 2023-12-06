@@ -1,0 +1,18 @@
+
+<div *ngIf="reportDetails" class="break-all p-5">
+    <p> <span class="underline">ID:</span> "{{reportDetails.id}}"</p>
+    <p> <span class="underline">MESSAGE:</span> "{{reportDetails.message}}"</p>
+    <div *ngIf="reportDetails.csp"> 
+        <div *ngFor="let cspEl of reportDetails.csp">
+            <hr class="separate">
+            <br>
+            <p> <span class="underline"> TYPE:</span> "{{ cspEl.type }}"</p>
+            <p> <span class="underline"> DESCRIPTION:</span> "{{ cspEl.description }}"</p>
+            <p> <span class="underline"> DIRECTIVE:</span> "{{ cspEl.directive }}"</p>
+            <p> <span class="underline"> SEVERITY:</span> "{{ cspEl.severity }}"</p>
+            <p> <span class="underline"> VALUE:</span> "{{ cspEl.value }}"</p>
+
+
+        </div>
+    </div>
+</div>

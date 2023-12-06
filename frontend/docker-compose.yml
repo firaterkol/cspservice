@@ -1,0 +1,17 @@
+services:
+  cspuiapp:
+    container_name: cspuicontainer
+    build: .
+    image: cspuiapp:v1
+    ports:
+      - :80
+    expose:
+      - 80
+    networks:
+      - internalnet
+
+networks:
+  internalnet:
+    driver: bridge
+
+#docker-compose up -d --build

@@ -1,0 +1,14 @@
+<div class="m-5 h-full bg-white">
+  <div class="flex flex-row py-10 gap-4 h-full mx-3 ">
+
+    <div class="border cursor-default overflow-y-auto w-1/2 max-w-[50%]">
+      <app-reports-list [reportElements]="reports" (rowWasSelected)="selectedReport = $event"></app-reports-list>
+    </div>
+    
+    <div class="border bg-white overflow-y-auto w-1/2 max-w-[50%]">
+        <app-report-details [reportDetails]="selectedReport" ></app-report-details>
+    </div>
+  
+  </div>
+</div>
+

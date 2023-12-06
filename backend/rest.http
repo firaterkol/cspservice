@@ -1,0 +1,45 @@
+
+###
+GET http://localhost:3000/report
+
+### create product
+POST http://localhost:3000/report
+Content-Type: application/json
+
+{
+"message": "firat erkol"
+}
+
+### get a report by id
+GET http://localhost:3000/report/id
+
+### Update a report by id
+PATCH http://localhost:3000/report/655eb2dc106775dfc04f79b5
+Content-Type: application/json
+
+{
+  "message": "yowsa"
+}
+
+### Delete a report by id
+DELETE http://localhost:3000/report/id
+
+
+### 
+GET http://localhost:3000/test/1234124/asdf
+
+###
+GET http://localhost:3000/test/1234124
+
+###
+POST http://localhost:3000/test
+Content-Type: application/json
+
+{
+  "message": "normal content"
+}
+
+
+
+### 
+GET http://localhost:3000/
