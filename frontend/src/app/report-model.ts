@@ -1,13 +1,13 @@
 export class Report {
     public id?: string;
-    public message?: string;
-    public url?: string;
+    public domain?: string;
+    public date?: Date;
     public csp?: any;
 
-    constructor(id?:string, message?:string, url?: string, csp?: any){
+    constructor(id?:string, domain?:string, date?: Date, csp?: any){
         this.id = id;
-        this.message = message;
-        this.url = url;
+        this.domain = domain;
+        this.date = date;
         this.csp = csp;
     }
 }

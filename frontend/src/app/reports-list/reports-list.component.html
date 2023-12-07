@@ -5,14 +5,14 @@
         <td mat-cell *matCellDef="let element"> {{element._id}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="message">
-        <th mat-header-cell *matHeaderCellDef> MESSAGE </th>
-        <td mat-cell *matCellDef="let element"> {{element.message}} </td>
+    <ng-container matColumnDef="domain">
+        <th mat-header-cell *matHeaderCellDef> DOMAIN </th>
+        <td mat-cell *matCellDef="let element"> {{element.domain}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="url">
-        <th mat-header-cell *matHeaderCellDef> URL </th>
-        <td mat-cell *matCellDef="let element"> {{element.url}} </td>
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> DATE </th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

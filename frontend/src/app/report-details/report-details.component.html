@@ -1,18 +1,28 @@
 
 <div *ngIf="reportDetails" class="break-all p-5">
     <p> <span class="underline">ID:</span> "{{reportDetails.id}}"</p>
-    <p> <span class="underline">MESSAGE:</span> "{{reportDetails.message}}"</p>
+    <p> <span class="underline">DOMAIN:</span> "{{reportDetails.domain}}"</p>
     <div *ngIf="reportDetails.csp"> 
-        <div *ngFor="let cspEl of reportDetails.csp">
-            <hr class="separate">
-            <br>
-            <p> <span class="underline"> TYPE:</span> "{{ cspEl.type }}"</p>
-            <p> <span class="underline"> DESCRIPTION:</span> "{{ cspEl.description }}"</p>
-            <p> <span class="underline"> DIRECTIVE:</span> "{{ cspEl.directive }}"</p>
-            <p> <span class="underline"> SEVERITY:</span> "{{ cspEl.severity }}"</p>
-            <p> <span class="underline"> VALUE:</span> "{{ cspEl.value }}"</p>
 
+        <div>
+           <hr class="separate">
+            <br>
+            <p *ngIf="reportDetails.csp['document-uri'] "> <span class="underline"> DOCUMENT URI:</span> {{ reportDetails.csp['document-uri'] }}</p>
+            <p *ngIf="reportDetails.csp['referrer'] "> <span class="underline"> REFERRER:</span> {{ reportDetails.csp['referrer'] }}</p>
+            <p *ngIf="reportDetails.csp['blocked-uri'] "> <span class="underline"> BLOCKED URI:</span> {{ reportDetails.csp['blocked-uri'] }}</p>
+            <p *ngIf="reportDetails.csp['violated-directive'] "> <span class="underline"> VIOLATED DIRECTIVE:</span> {{ reportDetails.csp['violated-directive'] }}</p>
+            <p *ngIf="reportDetails.csp['original-policy'] "> <span class="underline"> ORIGINAL POLICY:</span> {{ reportDetails.csp['original-policy'] }}</p>
+            <p *ngIf="reportDetails.csp['source-file'] "> <span class="underline"> SOURCE FILE:</span> {{ reportDetails.csp['source-file'] }}</p>
+            <p *ngIf="reportDetails.csp['line-number'] "> <span class="underline"> LINE NUMBER:</span> {{ reportDetails.csp['line-number'] }}</p>
+            <p *ngIf="reportDetails.csp['column-number'] "> <span class="underline"> COLUMN NUMBER:</span> {{ reportDetails.csp['column-number'] }}</p>
+            <p *ngIf="reportDetails.csp['effective-directive'] "> <span class="underline"> EFFECTIVE DIRECTIVE:</span> {{ reportDetails.csp['effective-directive'] }}</p>
+            <p *ngIf="reportDetails.csp['status-code'] "> <span class="underline"> STATUS CODE:</span> {{ reportDetails.csp['status-code'] }}</p>
+            <p *ngIf="reportDetails.csp['status-message'] "> <span class="underline"> STATUS MESSAGE:</span> {{ reportDetails.csp['status-message'] }}</p>
+            <p *ngIf="reportDetails.csp['script-sample'] "> <span class="underline"> SCRIPT SAMPLE:</span> {{ reportDetails.csp['script-sample'] }}</p>
+            <p *ngIf="reportDetails.csp['disposition'] "> <span class="underline"> DISPOSITION:</span> {{ reportDetails.csp['disposition'] }}</p>
+            <p *ngIf="reportDetails.csp['referrer-policy'] "> <span class="underline"> REFERRER POLICY:</span> {{ reportDetails.csp['referrer-policy'] }}</p>
 
         </div>
+
     </div>
 </div>
