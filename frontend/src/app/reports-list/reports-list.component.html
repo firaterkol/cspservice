@@ -1,21 +1,33 @@
-<table mat-table [dataSource]="reportElements">
-    
-    <ng-container matColumnDef="_id">
-        <th mat-header-cell *matHeaderCellDef> ID </th>
-        <td mat-cell *matCellDef="let element"> {{element._id}} </td>
-    </ng-container>
 
-    <ng-container matColumnDef="domain">
-        <th mat-header-cell *matHeaderCellDef> DOMAIN </th>
-        <td mat-cell *matCellDef="let element"> {{element.domain}} </td>
-    </ng-container>
+<div class="container h-full flex flex-col">
+    <div class="overflow-auto flex-grow border ">
 
-    <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef> DATE </th>
-        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
-    </ng-container>
+        <table mat-table [dataSource]="dataSourceElements" matSort class="object-contain ">
+            
+            <ng-container matColumnDef="_id">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="sticky top-0 text-lg"> ID </th>
+                <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+            </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row (click)="clickedRow(row)" *matRowDef="let row; columns: displayedColumns;" ></tr>
+            <ng-container matColumnDef="domain">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="sticky top-0 text-lg"> DOMAIN </th>
+                <td mat-cell *matCellDef="let element"> {{element.domain}} </td>
+            </ng-container>
 
-</table>
+            <ng-container matColumnDef="date">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="sticky top-0 text-lg"> DATE </th>
+                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row (click)="clickedRow(row)" *matRowDef="let row; columns: displayedColumns;" ></tr>
+
+        </table>
+    </div>
+    <div class="border relative inset-x-0 bottom-0">
+        <mat-paginator [pageSizeOptions]="[14, 20, 30]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>
+</div>
